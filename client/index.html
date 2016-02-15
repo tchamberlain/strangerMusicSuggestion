@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app='strangerMusicSuggestion'>
+  <head>
+    <meta charset="utf-8" />
+    <title>stranger music suggestion</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+
+  </head>
+ <body ng-controller="MainController">
+
+   <button ng-click="login()">Login with Spotify</button>
+
+   <input type="text" ng-model="searchartist" ng-change="searchArtist()" placeholder="Search for an artist">
+   <ul>
+     <li ng-repeat="artist in artists">
+       <a class="media" ng-href="{{artist.external_urls.spotify}}" target="_blank">
+         <img ng-src="{{artist.images[0].url}}" alt="">
+         <div class="media-details">
+           {{artist.name}}
+         </div>
+       </a>
+     </li>
+   </ul>
+
+   <script src="../bower_components/angular/angular.min.js"></script>
+   <script src="../bower_components/angular-spotify.js"></script>
+   <script src="app/app.js"></script>
+ </body>
+</html>

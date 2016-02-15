@@ -1,0 +1,24 @@
+{
+  "name": "client",
+  "homepage": "https://github.com/tchamberlain/strangerMusicSuggestion",
+  "authors": [
+    "tchamberlain <taylorannchamberlain@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.16",
+    "angular-route": "~1.3.16",
+    "angular-mocks": "~1.3.16"
+  }
+}

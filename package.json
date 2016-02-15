@@ -1,0 +1,41 @@
+{
+  "name": "stranger-music-suggestion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tchamberlain/strangerMusicSuggestion.git"
+  },
+  "author": "Taylor Chamberlain",
+  "bugs": {
+    "url": "https://github.com/tchamberlain/strangerMusicSuggestion/issues"
+  },
+  "homepage": "https://github.com/tchamberlain/strangerMusicSuggestion",
+  "scripts": {
+    "start": "gulp",
+    "lint": "jscs ./"
+  },
+  "pre-commit": "lint",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^1.5.7",
+    "clone-stats": "0.0.1",
+    "gulp": "^3.8.5",
+    "gulp-nodemon": "^1.0.4",
+    "gulp-shell": "^0.2.7"
+  },
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.4.5",
+    "gulp": "^3.9.1",
+    "mongoose": "^4.1.0",
+    "morgan": "^1.1.1",
+    "request": "^2.36.0"
+  }
+
+}
