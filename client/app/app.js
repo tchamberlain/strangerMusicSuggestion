@@ -1,5 +1,4 @@
 angular.module('strangerMusicSuggestion', [
-  //'app.services',
   'ngRoute',
   'spotify'
 ])
