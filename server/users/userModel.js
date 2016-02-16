@@ -14,10 +14,10 @@ function createArtistObj(savedSongs){
  };
 
 var UserSchema = new mongoose.Schema({
- name: Number,
+ name: String,
  spotifyID: Number,
- artistObj: {},
- savedSongs: {}
+ //artistObj: Number,
+ savedSongs: Number
 });
 
 

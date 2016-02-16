@@ -1,6 +1,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var userController = require('./users/userController.js');
+var bodyParser = require('body-parser');
 
 
 var app = express();
@@ -15,15 +16,17 @@ mongoose.connect('mongodb://localhost/stranger');
 
 // start listening to requests on port 8000
 app.listen(8000);
-
-// export our app for testing and flexibility, required by index.js
-
 console.log('listening');
+
+
+app.use(bodyParser.json());
+
+
+app.post('/api/users/', userController.createUser);
 
 // Serve the client files
 app.use(express.static(__dirname + '/../client'));
 
 // If user logs in, handle post request to create user
- app.post('/api/users/', userController.createUser);
 
 module.exports = app;
