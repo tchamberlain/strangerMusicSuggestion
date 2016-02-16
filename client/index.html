@@ -3,26 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <title>stranger music suggestion</title>
+           <script src="./lib/bower_components/angular/angular.min.js"></script>
+       <script src="./lib/bower_components/angular-route/angular-route.js"></script>
+       <script src="./lib/bower_components/angular-spotify/src/angular-spotify.js"></script>
+       <script src="app/app.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/styles.css" />
   </head>
- <body ng-controller="MainController">
-
-   <button ng-click="login()">Login with Spotify</button>
-
-   <input type="text" ng-model="searchartist" ng-change="searchArtist()" placeholder="Search for an artist">
-   <ul>
-     <li ng-repeat="artist in artists">
-       <a class="media" ng-href="{{artist.external_urls.spotify}}" target="_blank">
-         <img ng-src="{{artist.images[0].url}}" alt="">
-         <div class="media-details">
-           {{artist.name}}
-         </div>
-       </a>
-     </li>
-   </ul>
-   <script src="../bower_components/angular/angular.min.js"></script>
-   <script src="../bower_components/angular-route/angular-route.js"></script>
-   <script src="../bower_components/angular-spotify/src/angular-spotify.js"></script>
-   <script src="app/app.js"></script>
+ <body ng-controller="userController">
+    <div class ='outer'>
+    <p id='dl'>SONGS FROM STRANGERS</p>
+      <p> Spotify Discover is ok, but suggestions from a real human are better.</p>
+      <p> Find a stranger with your musical tastes to follow on spotify </p>
+      <p id='select' ng-click="login()"> Login with Spotify </p>
+      {{match}}
+    <div />
  </body>
 </html>

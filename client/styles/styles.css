@@ -1,0 +1,113 @@
+body {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 3em 0;
+  padding: 0;
+ background-color:#d1eaeb;
+}
+
+
+.outer {
+  margin: 0 auto;
+  max-width: 900px;
+  /*background-color: #fff;*/
+/*  border-width: 10px;
+  border-style: double;*/
+}
+
+p {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 35px;
+  font-weight: 510;
+  color: #000;
+  line-height: 60px;
+  text-transform: uppercase;
+  padding: 0px 15px 0;
+}
+
+#dl {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 60px;
+  font-weight: 800;
+  color: #000;	
+  line-height: 60px;
+  text-transform: uppercase;
+  margin: 0 auto;
+    /*background-color: #fff;*/
+    border-width: 10px;
+    border-style: double;
+    padding: 10px 10px 10px;
+}
+
+#dt {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 60px;
+  font-weight: 800;
+  margin-top: 60px;
+  color: #000;	
+  line-height: 60px;
+  text-transform: uppercase;
+}
+
+.fucking_header{
+  display: none;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#artist_box{
+  width: 75%;
+  border: 1px solid gray;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 60px;
+  font-weight: 800;
+  color: #000;	
+  line-height: 60px;
+  text-transform: uppercase;
+  float: left;
+}
+#arrow_margin{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#fucking_no p {
+  font-size: 20px;
+}
+
+#info {
+  position: absolute;
+  bottom: 5px;
+  right: 25px;
+  color: #777777;
+  font-size: 90%;
+  text-align: right;
+}
+
+
+#facebook {
+  position: absolute;
+  bottom: 25px;
+  right: 5px;
+
+}
+
+#home {
+  text-decoration: none;
+}
+#select:hover {
+  text-decoration: underline;
+}
+#select {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: right;
+}
+#arrow{
+  float: left;
+  vertical-align: middle;
+  height: 60px;
+  border: 0px;
+}

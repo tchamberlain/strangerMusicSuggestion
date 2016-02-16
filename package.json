@@ -4,7 +4,8 @@
   "description": "",
   "main": "Gulpfile.js",
   "scripts": {
-    "test": "test"
+    "start": "gulp",
+    "lint": "jscs ./"
   },
   "repository": {
     "type": "git",
@@ -15,10 +16,6 @@
     "url": "https://github.com/tchamberlain/strangerMusicSuggestion/issues"
   },
   "homepage": "https://github.com/tchamberlain/strangerMusicSuggestion",
-  "scripts": {
-    "start": "gulp",
-    "lint": "jscs ./"
-  },
   "pre-commit": "lint",
   "license": "UNLICENSED",
   "private": true,
@@ -35,7 +32,7 @@
     "gulp": "^3.9.1",
     "mongoose": "^4.1.0",
     "morgan": "^1.1.1",
+    "q": "^1.4.1",
     "request": "^2.36.0"
   }
-
 }
