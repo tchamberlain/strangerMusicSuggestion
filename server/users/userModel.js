@@ -15,7 +15,7 @@ function createArtistObj(savedSongs){
 
 var UserSchema = new mongoose.Schema({
  name: String,
- spotifyID: Number,
+ spotifyID: String,
  artistObj: {},
  savedSongs: []
 });

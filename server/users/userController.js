@@ -10,6 +10,16 @@ var findAllUsers = Q.nbind(User.find, User);
 
 module.exports = {
   
+  allUsers: function (req, res, next) {
+  findAllUsers({})
+    .then(function (users) {
+      res.json(users);
+    })
+    .fail(function (error) {
+      next(error);
+    });
+  },
+
   createUser: function (req, res, next) {
     var spotifyID = req.body.spotifyID;
       findUser({spotifyID: spotifyID})
