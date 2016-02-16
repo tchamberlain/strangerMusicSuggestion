@@ -35,17 +35,16 @@ module.exports = {
           if (noMatch){
             var newUser = {
              savedSongs: req.body.savedSongs,
-             // savedSongs: 1,
               name: req.body.name,
               spotifyID: req.body.spotifyID
             };
             return createUser(newUser);
           }
         })
-        .then(function (createUser) {
-          if (createUser) {
+        .then(function (createdUser) {
+          if (createdUser) {
             console.log('user create lol');
-            res.json(createUser);
+            res.json(createdUser);
           }
         })
         .fail(function (error) {
