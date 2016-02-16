@@ -1,5 +1,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
+var userController = require('./users/userController.js');
+
 
 var app = express();
 
@@ -15,9 +17,13 @@ mongoose.connect('mongodb://localhost/stranger');
 app.listen(8000);
 
 // export our app for testing and flexibility, required by index.js
-module.exports = app;
 
+console.log('listening');
 
-//ADDED THIS
 // Serve the client files
 app.use(express.static(__dirname + '/../client'));
+
+// If user logs in, handle post request to create user
+ app.post('/api/users/', userController.createUser);
+
+module.exports = app;
