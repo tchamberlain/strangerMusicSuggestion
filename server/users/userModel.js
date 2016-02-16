@@ -4,10 +4,10 @@ var crypto = require('crypto');
 //helper, gets array of artists from the playlist object
 function createArtistObj(savedSongs){
 	artistObj = {};
-	var currentPlaylist;
-
+	var artistName;
 	for(var i = 0; i < savedSongs.length; i++){
-		//FILL IN
+		artistID = "" + savedSongs[i].track.artists[0].id;
+		artistObj[artistID] = true;
 	}
 
 	return artistObj;
@@ -16,16 +16,17 @@ function createArtistObj(savedSongs){
 var UserSchema = new mongoose.Schema({
  name: String,
  spotifyID: Number,
- //artistObj: Number,
- savedSongs: Number
+ artistObj: {},
+ savedSongs: []
 });
 
 
-// UserSchema.pre('save', function (next) {
-//  // var artistObj = createArtistObj(this.savedSongs);
-//   this.artistObj = artistObj;
-//   next();
-// });
+UserSchema.pre('save', function (next) {
+  var artistObj = createArtistObj(this.savedSongs);
+  this.artistObj = artistObj;
+  // console.log('this!!!!!!!!!', this);
+  next();
+});
 
 
 module.exports = mongoose.model('User', UserSchema);

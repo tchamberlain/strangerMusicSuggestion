@@ -11,27 +11,26 @@ var findAllUsers = Q.nbind(User.find, User);
 module.exports = {
   
   createUser: function (req, res, next) {
-    console.log('we GOT HERE TO CREATE USER IN CONTROLLER', req); 
     var spotifyID = req.body.spotifyID;
       findUser({spotifyID: spotifyID})
         .then(function (match) {
           if (match) {
             res.send(match);
           } else {
-            return match;
+            var noMatch = true;
+            return noMatch;
           }
         })
-        .then(function () {
-          // if (!match){
-            
-          // }
-          var newUser = {
-            // savedSongs: req.body.savedSongs,
-            savedSongs: 1,
-            name: req.body.name,
-            spotifyID: req.body.spotifyID
-          };
-          return createUser(newUser);
+        .then(function (noMatch) { // this is hacky, ask about this
+          if (noMatch){
+            var newUser = {
+             savedSongs: req.body.savedSongs,
+             // savedSongs: 1,
+              name: req.body.name,
+              spotifyID: req.body.spotifyID
+            };
+            return createUser(newUser);
+          }
         })
         .then(function (createUser) {
           if (createUser) {
