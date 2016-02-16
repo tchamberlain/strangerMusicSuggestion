@@ -114,10 +114,12 @@ p {
   text-decoration: underline;
 }
 #select {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 600;
   text-align: right;
+  color: #808080;
 }
+
 #arrow{
   float: left;
   vertical-align: middle;
