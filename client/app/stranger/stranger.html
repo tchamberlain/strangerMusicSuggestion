@@ -4,12 +4,17 @@
 				<div class='box'>
 					<p>Your stranger is: </p>
 					<span class='username'>{{stranger.name}}</span> 
-					<!-- <h4>Go follow {{stranger}} on spotify</h4> -->
 					<!-- music form -->
 					<p>Send them a song</p>  
-					<form name='urlForm'  ng-submit="submitForm(urlForm.$valid)"novalidate>
-				      <input type="url" ng-model="newUrl">
-					</form>
+					<input type="text" ng-model="title" ng-change="searchSong(title)" placeholder="Search for an song">
+					  <ul>
+					    <ul ng-repeat="song in songs">
+					        <div class="media-details">
+					          {{song.name}}, <span class='artist'>{{song.artists[0].name}}</span>
+					        </div>
+					      </a>
+					    </ul>
+					  </ul>
 				</div>
 			</div>
 			<div ng-if="!stranger">

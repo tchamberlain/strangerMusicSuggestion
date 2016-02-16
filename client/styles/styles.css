@@ -18,9 +18,12 @@ body {
 .box {
   margin: 0 auto;
   max-width: 500px;
-  /*background-color: #fff;*/
-/*  border-width: 10px;
-  border-style: double;*/
+}
+
+.artist {
+  color: #808080;
+  text-transform: uppercase;
+
 }
 
 
