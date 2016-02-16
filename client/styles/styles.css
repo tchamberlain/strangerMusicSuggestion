@@ -15,6 +15,14 @@ body {
 /*  border-width: 10px;
   border-style: double;*/
 }
+.box {
+  margin: 0 auto;
+  max-width: 500px;
+  /*background-color: #fff;*/
+/*  border-width: 10px;
+  border-style: double;*/
+}
+
 
 p {
   font-family: Helvetica, Arial, sans-serif;
@@ -23,7 +31,7 @@ p {
   color: #000;
   line-height: 60px;
   text-transform: uppercase;
-  padding: 0px 15px 0;
+  /*padding: 0px 15px 0;*/
 }
 
 #dl {
@@ -35,9 +43,9 @@ p {
   text-transform: uppercase;
   margin: 0 auto;
     /*background-color: #fff;*/
-    border-width: 10px;
-    border-style: double;
-    padding: 10px 10px 10px;
+  border-width: 10px;
+  border-style: double;
+  padding: 10px 10px 10px;
 }
 
 #dt {
@@ -50,11 +58,13 @@ p {
   text-transform: uppercase;
 }
 
-.fucking_header{
-  display: none;
-  border: none;
-  margin: 0px;
-  padding: 0px;
+.username{
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 20px;
+  color: #808080;
+  text-transform: uppercase;
+
 }
 
 #artist_box{

@@ -20,6 +20,19 @@ module.exports = {
     });
   },
 
+  currentUser: function (req, res, next) {
+    var currentUserID = req.params.currentUserID;
+    console.log('CURRENT USER ID',currentUserID );
+    findUser({spotifyID: currentUserID})
+      .then(function (user) {
+        res.json(user);
+      })
+      .fail(function (error) {
+        next(error);
+      });
+  },
+
+
   setStranger: function (req, res, next) {
     var currentUserID = req.body.currentUserID;
     var stranger = req.body.stranger;

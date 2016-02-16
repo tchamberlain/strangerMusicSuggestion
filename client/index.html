@@ -3,22 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <title>stranger music suggestion</title>
-           <script src="./lib/bower_components/angular/angular.min.js"></script>
+           <script src="./lib/bower_components/angular/angular.js"></script>
        <script src="./lib/bower_components/angular-route/angular-route.js"></script>
        <script src="./lib/bower_components/angular-spotify/src/angular-spotify.js"></script>
        <script src="/app/services/services.js"></script>
        <script src="app/app.js"></script>
-      <script src="app/users/user.js"></script>
+       <script src="app/landing/landing.js"></script>
+      <script src="app/stranger/stranger.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/styles.css" />
   </head>
- <body ng-controller="userController">
+ <body >
     <div class ='outer'>
-    <p id='dl'>SONGS FROM STRANGERS</p>
-      <p> Spotify Discover is ok, but suggestions from a real human are better.</p>
-      <p> Find new songs from a stranger with your musical tastes  </p>
-      <p id='select' ng-click="login()"> Login with Spotify </p>
+      <p id='dl'>SONGS FROM STRANGERS</p>
       <div ng-view></div>
-      {{match}}
     <div />
  </body>
 </html>

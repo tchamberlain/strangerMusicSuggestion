@@ -1,5 +1,8 @@
 angular.module('services', [])
-.factory('User', function ($http) {
+.factory('User', function ($window, $http) {
+  var userObj = {};
+  var currentUserID = $window.localStorage.getItem('currentUserID');
+
   var makeNewUser = function (data) {
     return $http({
       method: 'POST',
@@ -7,10 +10,37 @@ angular.module('services', [])
       data: data
     })
     .then(function (resp) {
-      console.log('resp RESPONSE',resp);
+      userObj = resp.data;
       return resp;
     });
   };
+    var setStranger = function (stranger) {
+      //get user and stranger id for db update
+      var currentUserID = $window.localStorage.getItem('currentUserID');
+      var data = {currentUserID:currentUserID, stranger: stranger};
+
+      return $http({
+            method: 'POST',
+            url: '/api/stranger',
+            data: data
+          })
+          .then(function (resp) {
+            console.log('setStranger???',resp.data.stranger);
+            return resp;
+          });
+    };
+
+    var getCurrentUser = function () {
+      console.log(currentUserID,'currentUserID');
+      return $http({
+        method: 'GET',
+        url: '/api/users/' + currentUserID,
+      })
+      .then(function (resp) {
+        console.log('we get a user??',resp);
+        return resp;
+      });
+    };
 
     var allUsers = function () {
       return $http({
@@ -22,13 +52,7 @@ angular.module('services', [])
       });
     };
 
-    var logout = function(){
-      localStorage.setItem('spotify-token', null);
-      console.log()
-    };
-
     var findMatch = function(thisUser, otherUsers){
-      console.log(thisUser,otherUsers, 'FINDMATCH');
       var numCommonArtists = 0;
       var currMatch = 'Sorry no match ';
       var currCount = 0;
@@ -38,11 +62,11 @@ angular.module('services', [])
           //if isn't current user
           if(otherUsers[i].spotifyID !== thisUser.spotifyID){
             //set comparison user
-            artistObj = otherUsers[i];
+            artistObj = otherUsers[i].artistObj;
             // reset current count to 0
             currCount = 0;
             for(var key in thisUser.artistObj){
-                console.log(key, 'key');
+                console.log(key, 'KEY',thisUser.artistObj[key],'VALE' );
               if (key in artistObj){
                 currCount ++;
               }
@@ -51,7 +75,6 @@ angular.module('services', [])
               currMatch = otherUsers[i];
             }
           }
-          console.log(currMatch);
             
           }
         return currMatch;
@@ -60,8 +83,9 @@ angular.module('services', [])
   return {
     makeNewUser: makeNewUser,
     allUsers: allUsers,
-    logout: logout,
-    findMatch: findMatch
+    findMatch: findMatch,
+    setStranger: setStranger,
+    getCurrentUser: getCurrentUser
   };
 
 });

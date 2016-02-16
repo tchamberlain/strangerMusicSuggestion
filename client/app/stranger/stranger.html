@@ -1,0 +1,24 @@
+<div id='container'>
+	<div ng-controller="strangerController" >
+			<div ng-if="stranger">
+				<div class='box'>
+					<p>Your stranger is: </p>
+					<span class='username'>{{stranger.name}}</span> 
+					<!-- <h4>Go follow {{stranger}} on spotify</h4> -->
+					<!-- music form -->
+					<p>Send them a song</p>  
+					<form name='urlForm'  ng-submit="submitForm(urlForm.$valid)"novalidate>
+				      <input type="url" ng-model="newUrl">
+					</form>
+				</div>
+			</div>
+			<div ng-if="!stranger">
+				<div class="box" >
+					<p>No match</p>
+					<h2>Sorry no one shares your tastes.</h2>
+				</div>
+			</div>
+	</div>
+</div>
+
+
