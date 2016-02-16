@@ -7,7 +7,7 @@ function createArtistObj(savedSongs){
 	var artistName;
 	for(var i = 0; i < savedSongs.length; i++){
 		artistID = "" + savedSongs[i].track.artists[0].id;
-		artistObj[artistID] = true;
+		artistObj[artistID] = savedSongs[i].track.artists[0].name;
 	}
 
 	return artistObj;
@@ -24,7 +24,6 @@ var UserSchema = new mongoose.Schema({
 UserSchema.pre('save', function (next) {
   var artistObj = createArtistObj(this.savedSongs);
   this.artistObj = artistObj;
-  // console.log('this!!!!!!!!!', this);
   next();
 });
 
