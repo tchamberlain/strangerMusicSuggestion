@@ -26,6 +26,8 @@ app.post('/api/users/', userController.createUser);
 app.get('/api/users/', userController.allUsers);
 app.post('/api/stranger/', userController.setStranger);
 app.get('/api/users/:currentUserID', userController.currentUser);
+app.post('/api/sendSong/:strangerID', userController.sendSong);
+
 
 
 // Serve the client files

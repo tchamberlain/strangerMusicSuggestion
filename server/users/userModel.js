@@ -18,7 +18,8 @@ var UserSchema = new mongoose.Schema({
  spotifyID: String,
  artistObj: {},
  savedSongs: [],
- stranger:{}
+ stranger:{},
+ receivedSongs: []
 });
 
 

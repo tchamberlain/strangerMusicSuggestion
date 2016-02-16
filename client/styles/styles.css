@@ -20,6 +20,10 @@ body {
   max-width: 500px;
 }
 
+h4 {
+  color:#808080;
+}
+
 .artist {
   color: #808080;
   text-transform: uppercase;

@@ -10,6 +10,24 @@ var findAllUsers = Q.nbind(User.find, User);
 
 module.exports = {
   
+  sendSong: function (req, res, next) {
+    var strangerID = req.params.strangerID;
+    var song = req.body.song;
+    //find stranger to update them
+    findUser({spotifyID: strangerID})
+    .then(function (user) {
+      //actually update the user
+     user.receivedSongs.push(song);
+       user.save(function (err) {
+         if (err) return handleError(err);
+         res.send(user);
+       });
+    })
+    .fail(function (error) {
+      next(error);
+    });
+    },
+
   allUsers: function (req, res, next) {
   findAllUsers({})
     .then(function (users) {

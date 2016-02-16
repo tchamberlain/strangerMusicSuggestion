@@ -7,7 +7,8 @@ angular.module('stranger', [])
 		} else{
 			$scope.currentUser = currentUserData.data;
 			$scope.stranger = $scope.currentUser.stranger;
-			console.log('scope stranger',$scope.stranger );
+			$scope.receivedSongs = $scope.currentUser.receivedSongs;
+
 		}
 	});
 
@@ -18,5 +19,13 @@ angular.module('stranger', [])
 		  $scope.songs=data.tracks.items;
 		});
 	};
+
+	$scope.sendSong = function (song) {
+		console.log('got song??', song);
+		var strangerID = $scope.stranger.spotifyID;
+		User.sendSong(song, strangerID);
+		alert('Song sent!');
+	};
+
 
 }]);

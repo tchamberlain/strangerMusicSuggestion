@@ -3,6 +3,18 @@ angular.module('services', [])
   var userObj = {};
   var currentUserID = $window.localStorage.getItem('currentUserID');
 
+  var sendSong = function (song,strangerID) {
+    return $http({
+      method: 'POST',
+      url: '/api/sendSong/'+strangerID,
+      data: {song: song}
+    })
+    .then(function (resp) {
+      return resp;
+    });
+  };
+
+
   var makeNewUser = function (data) {
     return $http({
       method: 'POST',
@@ -25,7 +37,6 @@ angular.module('services', [])
             data: data
           })
           .then(function (resp) {
-            console.log('setStranger???',resp.data.stranger);
             return resp;
           });
     };
@@ -85,7 +96,8 @@ angular.module('services', [])
     allUsers: allUsers,
     findMatch: findMatch,
     setStranger: setStranger,
-    getCurrentUser: getCurrentUser
+    getCurrentUser: getCurrentUser,
+    sendSong: sendSong
   };
 
 });
