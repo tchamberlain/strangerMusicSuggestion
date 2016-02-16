@@ -20,6 +20,25 @@ module.exports = {
     });
   },
 
+  setStranger: function (req, res, next) {
+    var currentUserID = req.body.currentUserID;
+    var stranger = req.body.stranger;
+
+  findUser({spotifyID: currentUserID})
+    .then(function (user) {
+      //actually update the user
+     user.stranger = stranger;
+       user.save(function (err) {
+         if (err) return handleError(err);
+         res.send(user);
+       });
+    })
+    .fail(function (error) {
+      next(error);
+    });
+  },
+
+
   createUser: function (req, res, next) {
     var spotifyID = req.body.spotifyID;
       findUser({spotifyID: spotifyID})

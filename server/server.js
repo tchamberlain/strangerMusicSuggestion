@@ -24,6 +24,7 @@ app.use(bodyParser.json());
 
 app.post('/api/users/', userController.createUser);
 app.get('/api/users/', userController.allUsers);
+app.post('/api/stranger/', userController.setStranger);
 
 // Serve the client files
 app.use(express.static(__dirname + '/../client'));
