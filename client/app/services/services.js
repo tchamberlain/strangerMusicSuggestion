@@ -14,7 +14,6 @@ angular.module('services', [])
     });
   };
 
-
   var makeNewUser = function (data) {
     return $http({
       method: 'POST',

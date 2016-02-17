@@ -12,7 +12,6 @@ angular.module('stranger', [])
 		}
 	});
 
-
 	$scope.searchSong = function (title) {
 		Spotify.search(title, 'track').then(function (data) {
 		  console.log(data);
@@ -34,7 +33,9 @@ angular.module('stranger', [])
 		Spotify
 		  .saveUserTracks(song.id)
 		  .then(function (data) {
-		    alert(song.name + ' saved!');
+		  	//add login at somepoint
+			  alert(song.name + ' saved!');
+
 		  });
 		
 	};

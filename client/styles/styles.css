@@ -1,12 +1,20 @@
 body {
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: bold;
   margin: 3em 0;
   padding: 0;
  background-color:#d1eaeb;
 }
+img{
+  content:url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-right-b-512.png");
+  width:30px;
+  height:27px;
+}
 
+ul {
+    list-style-image: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-right-b-512.png');
+}
 .gray{
   color:#808080;
 }
@@ -19,10 +27,8 @@ input{
 .outer {
   margin: 0 auto;
   max-width: 900px;
-  /*background-color: #fff;*/
-/*  border-width: 10px;
-  border-style: double;*/
 }
+
 .box {
   margin: 0 auto;
   max-width: 500px;
@@ -35,18 +41,23 @@ h4 {
 .artist {
   color: #808080;
   text-transform: uppercase;
-
 }
-
 
 p {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 35px;
   font-weight: 510;
   color: #000;
-  line-height: 60px;
+  /*line-height: 60px;*/
   text-transform: uppercase;
-  /*padding: 0px 15px 0;*/
+}
+
+.received{
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 35px;
+  font-weight: 510;
+  color: #000;
+  text-transform: uppercase;
 }
 
 #dl {
@@ -93,35 +104,13 @@ p {
   text-transform: uppercase;
   float: left;
 }
+
 #arrow_margin{
   margin-top: auto;
   margin-bottom: auto;
 }
 
-#fucking_no p {
-  font-size: 20px;
-}
 
-#info {
-  position: absolute;
-  bottom: 5px;
-  right: 25px;
-  color: #777777;
-  font-size: 90%;
-  text-align: right;
-}
-
-
-#facebook {
-  position: absolute;
-  bottom: 25px;
-  right: 5px;
-
-}
-
-#home {
-  text-decoration: none;
-}
 #select:hover {
   text-decoration: underline;
 }

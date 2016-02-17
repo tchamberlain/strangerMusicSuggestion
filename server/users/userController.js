@@ -68,7 +68,6 @@ module.exports = {
     });
   },
 
-
   createUser: function (req, res, next) {
     var spotifyID = req.body.spotifyID;
       findUser({spotifyID: spotifyID})
