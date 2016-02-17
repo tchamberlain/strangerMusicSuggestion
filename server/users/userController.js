@@ -40,7 +40,6 @@ module.exports = {
 
   currentUser: function (req, res, next) {
     var currentUserID = req.params.currentUserID;
-    console.log('CURRENT USER ID',currentUserID );
     findUser({spotifyID: currentUserID})
       .then(function (user) {
         res.json(user);

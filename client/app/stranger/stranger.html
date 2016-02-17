@@ -3,9 +3,10 @@
 			<div ng-if="stranger.name">
 				<div class='box'>
 					<p>Your stranger is: </p>
-					<span class='username'>{{stranger.name}}</span> 
+					<div class='username'>{{stranger.name}}</div> 
 					<!-- music form -->
-					<p>Send them a song</p>  
+
+					<p>Send them a song:</p>  
 					<input type="text" ng-model="title" ng-change="searchSong(title)" placeholder="Search for an song">
 					  <ul>
 					    <ul ng-repeat="song in songs" ng-click="sendSong(song)">
@@ -19,7 +20,7 @@
 					  <p>Received Songs: </p>
 					  <h4>Click song to save to your Spotify Library</h4>
 
-					  <ul ng-repeat="song in receivedSongs" ng-click="">
+					  <ul ng-repeat="song in receivedSongs" ng-click="saveSong(song)">
 					  	<div class="media-details">
 					  	  {{song.name}}, <span class='artist'>{{song.artists[0].name}}</span>
 					  	</div>

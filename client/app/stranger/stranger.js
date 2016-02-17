@@ -24,7 +24,19 @@ angular.module('stranger', [])
 		console.log('got song??', song);
 		var strangerID = $scope.stranger.spotifyID;
 		User.sendSong(song, strangerID);
-		alert('Song sent!');
+		alert(song.name + ' sent!');
+	};
+
+
+	$scope.saveSong = function (song) {
+		console.log('got song??', song);
+		
+		Spotify
+		  .saveUserTracks(song.id)
+		  .then(function (data) {
+		    alert(song.name + ' saved!');
+		  });
+		
 	};
 
 
