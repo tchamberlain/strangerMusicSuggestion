@@ -7,6 +7,14 @@ body {
  background-color:#d1eaeb;
 }
 
+.gray{
+  color:#808080;
+}
+
+input{
+  height:30px;
+  width:300px;
+}
 
 .outer {
   margin: 0 auto;

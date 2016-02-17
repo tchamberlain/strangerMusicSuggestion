@@ -1,6 +1,5 @@
 angular.module('landing', [])
 .controller('landingController', ['$window','$scope', 'Spotify', 'User','$location', function ($window, $scope, Spotify, User, $location) {
-  $scope.user = {};  
 
   $scope.login = function () {
     Spotify.login().then(function (data) {
